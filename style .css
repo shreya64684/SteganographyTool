@@ -1,0 +1,181 @@
+#textCanvas {
+  display: none;
+}
+
+#main{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+#main>h1{
+  font-family: monospace;
+  color: aqua;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+#main>h1>span{
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+#main>h1>span>img{
+  height: 50px;
+  color: white;
+  transition: 0.3s ease;
+}
+#main>h4{
+font-family: monospace;
+  color: white;
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}  
+#main>#encryption>h2{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  background-color: black;
+  padding: 8px;
+  padding-bottom: 8px;
+  font-size: xx-large;
+  font-family: monospace;
+  color: aqua;
+}  
+#main>#encryption>h2>span{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+#main>#encryption>h2>span>img{
+height: 30px;
+width: 30px;
+display: flex;
+}
+#encryption>h4{
+font-family: monospace;
+font-size: x-large;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+#encryption>#text{
+height: 50px;
+width: 500px;
+}
+#encryption>#imageLoader2{
+width: 500px;
+height: 30px;
+}
+#imagecanvas{
+width: 200px;
+height: 200px;
+}
+.warning{
+display: inline-block;
+  align-items: center;
+  background-color: #333;
+  border: 2px solid aqua;
+  width: fit-content;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 150px;
+  margin-right: 20px;
+  font-family: monospace;
+}
+.warning:hover{
+background-color: aqua;
+color: black;
+}
+.success{
+display: inline-block;
+  align-items: center;
+  background-color: #333;
+  border: 2px solid aqua;
+  width: fit-content;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 80px;
+  margin-right: 20px;
+  font-family: monospace;
+}
+.success:hover{
+background-color: aqua;
+color: black;
+}
+ 
+
+#decryption>h2{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  background-color: black;
+  padding: 8px;
+  padding-bottom: 8px;
+  font-size: xx-large;
+  font-family: monospace;
+  color: aqua;
+}  
+#decryption>h2>span{
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+#decryption>h2>span>img{
+height: 30px;
+width: 30px;
+display: flex;
+}
+#decryption>h4{
+font-family: monospace;
+font-size: x-large;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+#decryption>#message{
+height: 50px;
+width: 500px;
+
+}
+#messagearea{
+padding-bottom: 10px;
+}
+#decryption>#imageLoader2{
+width: 500px;
+height: 30px;
+}
+
+
+#original{
+font-family: monospace;
+font-size: large;
+}
+.btn-success{
+background-color: DodgerBlue;
+border: none;
+color: white;
+padding: 12px 30px;
+cursor: pointer;
+font-size: 20px;
+}
+.btn-success:hover {
+background-color: RoyalBlue;
+}
+
+
+

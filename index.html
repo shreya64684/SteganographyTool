@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography</title>
+	<!-- <link rel="stylesheet" href="style.css"> -->
+  
+	<link rel="script" href="script.js">
+</head>
+<body>
+<div id="main">
+        <h1><span><img src="Images/stegoimage.png"></span>Steganography</h1>
+        <h4>   From Wikipedia -   'Steganography is the practice of concealing a file, message, image, or video within another file, message, image, or video.'</h4>
+    <div id="encryption">
+        <h2><span><img src="Images/lock.png"></span>Encode an image with a message</h2>
+	<h4 class="text-warning">
+    Enter a message to hide within the image:<span id="capacity"></span>
+  </h4>
+  
+	<textarea type="text" id="text" placeholder="Enter your secret message"></textarea>
+	<h4 class="text-success">Upload an image :</h4>
+	<input type="file" id="imageLoader" name="imageLoader"/>
+  <br>
+  <br>
+  <div class="btns">
+  <button id="hide" class="btn warning">Hide</button>
+  <button id="read" class="btn success">Read</button>
+  </div>
+  
+  
+  <div id="messageArea" class="mb-3 pb-3 invisible">
+    <h2 class="text-info">Message:</h2>
+    <div class="mb-3" id="message"></div><span id='copy' onclick="copyText()"class="btn btn-outline-info"></span>
+  </div>
+  <div id="right" class="row">
+    <div id="original" class="col-md-6" float="left">
+      <h2>Plain Image:</h2>
+                <div class="card">
+                  <img id="img" class="card-img" src="Images/images.jpeg"/>
+      </div>
+    </div>    
+	<br/>
+  <div id="stego" class="col-md-6" float="right">
+    <h2>Encoded Image:</h2>
+              <div class="card">
+                  <img id="cover" class="card-img" src=""/>
+                  <div class="card-img-overlay"><a id="download" class="btn btn-success" download="cover.png" rel="nofollow">Download</a></div>
+              </div>
+	
+  </div>
+  </div>
+    </div>
+
+
+        
+<!-- <div id="decryption">
+	<h2><span><img src="unlock.png"></span>Decode an image</h2>
+	<h4>Upload an image:</h4>
+  <div id="right" class="row">
+    <div id="original" class="col-md-6">
+      <h2>Plain Image:</h2>
+                <div class="card">
+                  <img id="img2" class="card-img" src="images.jpeg"/>
+                </div>
+    </div>
+  </div>              
+	<input type="file" id="imageLoader2" name="imageLoader2"/>
+	<canvas id="imageCanvas2"></canvas>
+  <button id="read" class="btn btn-outline-success">Read</button>
+  
+  <div id="messageArea" class="mb-3 pb-3 invisible">
+      <h2 class="text-info">Message:</h2>
+      <div class="mb-3" id="message"></div><span id='copy' onclick="copyText()"class="btn btn-outline-info"></span>
+  </div> -->
+  
+  <br>
+	
+</div>
+</div>
+ <script src="js/script.js"></script>
+ <script type="text/javascript" src="js/stegno.js"></script>
+ 
+<style>
+body{
+  height: 100%;
+  
+}	
+  
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    min-height: 100%;
+}
+#main>h1{
+    font-family: monospace;
+    color: aqua;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+#main>h1>span{
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+#main>h1>span>img{
+    height: 50px;
+    color: white;
+    transition: 0.3s ease;
+}
+#main>h4{
+  font-family: monospace;
+    color: white;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}  
+#main>#encryption>h2{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    background-color: black;
+    padding: 8px;
+    padding-bottom: 8px;
+    font-size: xx-large;
+    font-family: monospace;
+    color: aqua;
+}  
+#main>#encryption>h2>span{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+#main>#encryption>h2>span>img{
+  height: 30px;
+  width: 30px;
+  display: flex;
+}
+#encryption>h4{
+ font-family: monospace;
+ font-size: x-large;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+#encryption>#text{
+  height: 50px;
+  width: 500px;
+}
+#encryption>#imageLoader2{
+  width: 500px;
+  height: 30px;
+}
+#imagecanvas{
+  width: 200px;
+  height: 200px;
+}
+.warning{
+  display: inline-block;
+    align-items: center;
+    background-color: #333;
+    border: 2px solid aqua;
+    width: fit-content;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 150px;
+    margin-right: 20px;
+    font-family: monospace;
+}
+.warning:hover{
+  background-color: aqua;
+  color: black;
+}
+.success{
+  display: inline-block;
+    align-items: center;
+    background-color: #333;
+    border: 2px solid aqua;
+    width: fit-content;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 80px;
+    margin-right: 20px;
+    font-family: monospace;
+}
+.success:hover{
+  background-color: aqua;
+  color: black;
+}
+   
+
+#decryption>h2{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    background-color: black;
+    padding: 8px;
+    padding-bottom: 8px;
+    font-size: xx-large;
+    font-family: monospace;
+    color: aqua;
+}  
+#decryption>h2>span{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+#decryption>h2>span>img{
+  height: 30px;
+  width: 30px;
+  display: flex;
+}
+#decryption>h4{
+ font-family: monospace;
+ font-size: x-large;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+#decryption>#message{
+  height: 50px;
+  width: 500px;
+
+}
+#messagearea{
+  padding-bottom: 10px;
+}
+#decryption>#imageLoader2{
+  width: 500px;
+  height: 30px;
+}
+
+
+#original{
+  font-family: monospace;
+ font-size: large;
+}
+.btn-success{
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.btn:hover {
+  background-color: RoyalBlue;
+}
+/* .btn{
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border: none;
+    
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: #eee;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 250px;
+} */
+
+
+
+
+
+
+
+
+
+</style>
+    
+</body>
+</html>
